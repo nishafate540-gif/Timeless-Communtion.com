@@ -1,0 +1,1428 @@
+
+/* all styllings */
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --soft_lavender:#E6E6FA;
+    --pastel_plum:#A87CA0;
+    --deep_violet:#5E286D;
+    --royal_audergine:#2A0E3C;
+    --white_color:white;
+    --gold:goldenrod;
+}
+
+
+/* hero and navigation bar sections */
+
+.others_svgs{
+    padding: .5rem;
+    background-color: var(--royal_audergine);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white_color);
+}
+
+
+.others_svgs img{
+    width: 1.5rem;
+}
+
+#stores{
+    display: flex;
+    gap: 1rem;
+}
+
+.others_svgs h4{
+    width: 20ch;
+    overflow: hidden;
+    animation: typing 3s steps(20) infinite alternate-reverse;
+}
+
+@keyframes typing{
+    from{
+        width: 0ch;
+    }
+}
+
+nav{
+    z-index: 200;
+    width: 99vw;
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;transition: .3s ease-in-out;
+}
+
+nav:hover{
+    background-color: var(--pastel_plum);
+}
+
+nav #logo img{
+    width: 8rem;
+    margin: 0;
+}
+
+nav #links a{
+    color: var(--white_color);
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: .3s ease-in-out;
+}
+
+nav #links a:hover{
+    background-color: var(--royal_audergine);
+    padding: 1rem;
+    transition: .3s ease-in-out;
+    color: var(--white_color);
+}
+
+/* #bg{
+    background-image: url('../images/another.jpg');
+    object-fit: contain;
+    background-size: cover;
+    height: 100vh;
+} */
+
+  .slider{
+    position:relative;
+    width:99vw;
+    height:100vh;
+  }
+
+  .slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    background-size:cover;
+    background-position:center;
+    animation: cycle 50s infinite;
+  }
+
+  .slide-content button{
+    padding: .8rem;
+    color: var(--white_color);
+    background-color: var(--deep_violet);
+    transition: .5s ease-in-out;
+    border: none;
+    margin-top: 1rem;
+}
+
+.slide-content button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+  /* Each slide gets a 5s window (10 slides x 5s = 50s loop),
+     staying visible for 4s then fading over 1s */
+  .slide:nth-child(1)  { 
+    animation-delay: 0s;  
+    background-image:url('../images/hero.jpg'); 
+}
+
+  .slide:nth-child(2)  { 
+    animation-delay: 5s;  
+    background-image: url('../images/hero\ 2.jpg');
+}
+
+  .slide:nth-child(3)  { 
+    animation-delay: 10s; 
+    background-image: url('../images/hero\ 3.jpg');
+}
+
+  .slide:nth-child(4)  { 
+    animation-delay: 15s; 
+    background-image: url('../images/hero\ 4.jpg');
+    
+}
+
+  .slide:nth-child(5)  {
+    animation-delay: 20s; 
+    background-image: url('../images/hero\ 5.jfif');
+}
+
+  .slide:nth-child(6)  { 
+    animation-delay: 25s; 
+    background-image: url('../images/hero\ 6.jfif');
+}
+
+  .slide:nth-child(7)  { 
+    animation-delay: 30s; 
+    background-image: url('../images/hero\ 8.jfif');
+}
+
+  .slide:nth-child(8)  { 
+    animation-delay: 35s; 
+    background-image: url('../images/hero\ 7.jfif');
+}
+
+  .slide:nth-child(9)  { 
+    animation-delay: 40s; 
+    background-image: url('../images/hero\ 9.jpg');
+    
+}
+
+  .slide:nth-child(10) { 
+    animation-delay: 45s; 
+    background-image: url('../images/g\ \(2\).jfif');
+     
+}
+
+
+  @keyframes cycle{
+    0%   { opacity:0; }
+    2%   { opacity:1; }
+    8%   { opacity:1; }
+    10%  { opacity:0; }
+    100% { opacity:0; }
+  }
+
+  .slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, rgba(15,11,9,0.75) 0%, rgba(15,11,9,0.15) 55%, rgba(15,11,9,0.35) 100%);
+  }
+
+  .slide-content{
+    position:absolute;
+    left:0; 
+    right:0; 
+    bottom:12%;
+    text-align:center;
+    z-index:2;
+    padding:0 24px;
+  }
+  .slide-content .num{
+    font-family:Arial, sans-serif;
+    font-size:0.75rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--clay);
+    display:block;
+    margin-bottom:14px;
+    color: var(--white_color);
+  }
+  .slide-content h2{
+    font-weight:400;
+    font-size:clamp(2rem, 6vw, 3.6rem);
+    margin:0 0 12px;
+    color: var(--deep_violet);
+  }
+  .slide-content p{
+    font-family:Arial, sans-serif;
+    font-size:1rem;
+    opacity:0.9;
+    max-width:480px;
+    margin:0 auto;
+    color: var(--soft_lavender);
+  }
+
+  .dots{
+    position:absolute;
+    bottom:36px;
+    left:0; 
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    z-index:3;
+  }
+  .dot{
+    width:8px; 
+    height:8px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.4);
+  }
+
+
+/* main section */
+main{
+   /* padding: 5rem; */
+   background-color: var(--Soft_Gold);
+}
+
+.section1{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* flex-wrap: wrap; */
+    gap: 2rem;
+}
+
+.section1 img{
+    width: 30rem;
+    transition: .2s ease-in-out;
+}
+
+.section1 img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+.section2{
+    background-color: var(--soft_lavender);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.section2 .pictures_load div  img{
+    width: 18rem;
+    transition: .2s ease-in-out;
+}
+
+.section2 .pictures_load div img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section2 h2{
+    font-style:  Poppins;
+}
+
+.section2 .pictures_load{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.section2 .one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+   
+}
+
+.section2 .circles{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.section2 .circles .two img{
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    transition: .2s ease-in-out;
+}
+
+.section2 .circles .two img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section2 button{
+    padding: 1rem;
+    color: var(--white_color);
+    background-color: var(--deep_violet);
+     transition: .5s ease-in-out;
+    border: none;
+    margin-top: -2rem;
+    width: 5rem;
+}
+
+.section2 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+.section2 .search{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section2 .search h1{
+    padding: .5rem;
+    background-color: var(--royal_audergine);
+    color: var(--pastel_plum);
+}
+
+.section2 .search span{
+    color: var(--gold);
+}
+
+.section2 .search .edite{
+    padding: 1rem;
+    border: 1px solid var(--royal_audergine);
+    background-color: var(--white_color);
+    height: 3.3rem;
+    width: 20rem;
+}
+
+.section2 .search input{
+    padding: .5rem;
+}
+
+.section3{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section3 h3{
+    color: var(--royal_audergine);
+}
+
+.section3 h1{
+    background-color: var(--pastel_plum);
+    color: var(--white_color);
+    width: 32rem;
+    text-align: center;
+}
+
+.section3 .icons img{
+    width: 100px;
+    transition: .2s ease-in-out;
+}
+
+.section3 .icons img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+.section3 .earring{
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .earring .pics img{
+    width: 20rem;
+    margin: 1rem;
+    transition: .2s ease-in-out;
+}
+
+.section3 .earring .pics img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section4{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.section4 img{
+    width: 50rem;
+    transition: .2s ease-in-out;
+}
+
+.section4  img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section4 h3{
+    color: var(--royal_audergine);
+    margin-bottom: .8rem;
+}
+
+.section4 button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+    transition: .5s ease-in-out;
+}
+
+.section4 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+.section5{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    margin: 2rem;
+    margin-left: 25rem;
+    gap: 1rem;
+    width: 50rem;
+    border-radius: 20rem;
+    box-shadow: 0 5px 10px var(--royal_audergine) ;
+}
+
+.section5 #pic img{
+    width: 10rem;
+    transition: .2s ease-in-out;
+}
+
+.section5  #pic  img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section5 button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+    transition: .5s ease-in-out;
+}
+
+.section5 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+.section6{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section6 div~.pics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section6 div~.pics img {
+    width: 15rem;
+    margin: 1rem;
+    transition: .2s ease-in-out;
+}
+
+.section6 div~.pics  img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section6 button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+}
+
+.section6 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+video{
+    padding: 2rem;
+    margin: 2rem;
+    height: 40rem;
+}
+
+.pics-div{
+    margin-top: 3rem;
+}
+#video{
+    display: flex;
+}
+
+.middle{
+    height: 100vh;
+    background-size: cover;
+    background-image: url('../images/hero\ \(2\).jpg');
+    border-image: fill 5 linear-gradient(to right,#0003,#000);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+}
+
+.middle div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.middle button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+    transition: .5s ease-in-out;
+}
+
+.middle button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+.section7{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.section7 .pics{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section7 img{
+    width: 15rem;
+    margin: 1rem;
+    transition: .2s ease-in-out;
+}
+
+.section6 div~.pics  img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+
+.section7 button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+    transition: .5s ease-in-out;
+}
+
+.section7 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+}
+
+
+.section8{
+    background-color: var(--soft_lavender);
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content:center ;
+    align-items: center;
+}
+
+.section8 #one img{
+    width: 25rem;
+    border-top-left-radius: 10rem;
+    box-shadow: 0 25px 0px 10px var(--pastel_plum);
+    box-shadow: 20px 0  15px 0 var(--royal_audergine);
+    transition: .2s ease-in-out;
+}
+
+.section8 #one  img:hover{
+    transform: scale(.9);
+    transition: .2s ease-in-out;
+}
+
+.section8 #card1,.section8 #card2,.section8 #card3,.section8 #card4{
+    margin: 1rem;
+    padding: 2rem;
+    height: 15rem;
+    width: auto;
+}
+
+.section8 #card1:hover,#card2:hover,#card3:hover,#card4:hover{
+    height: 20rem;
+    width: auto;
+    transition: .5s ease-in-out;
+}
+
+
+.section8 button{
+    padding: .5rem;
+    background-color: var(--deep_violet);
+    color: var(--white_color);
+    margin-top: .8rem;
+    transition: .5s ease-in-out;
+
+}
+
+.section8 button:hover{
+    background-color: var(--pastel_plum);
+    color: var(--soft_lavender);
+    transition: .5s ease-in-out;
+    border-radius: 10rem;
+    font-weight: 600;
+}
+
+.section8 #card1{
+    background-image: url('../images/card\ bag.jfif');
+     border-image: fill 1 linear-gradient(to bottom,#0003,#030303a2);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    color: var(--white_color);
+    text-align:center;
+    transition: .5s ease-in-out;
+}
+
+.section8 #card2{
+    background-image: url('../images/card\ earring.jfif');
+    border-image: fill 1 linear-gradient(to bottom,#0003,#030303a2);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    color: var(--white_color);
+    text-align:center;
+    transition: .5s ease-in-out;
+}
+
+
+.section8 #card3{
+    background-image: url('../images/card\ necklace.jfif');
+     border-image: fill 1 linear-gradient(to bottom,#0003,#030303a2);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    color: var(--white_color);
+    text-align:center;
+    transition: .5s ease-in-out;
+}
+
+
+.section8 #card4{
+    background-image: url('../images/watch\ time.jfif');
+     border-image: fill 1 linear-gradient(to bottom,#0003,#030303a2);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    color: var(--white_color);
+    text-align:center;
+    transition: .5s ease-in-out;
+}
+
+
+
+
+.last-part{
+    padding: 2rem;
+    background-color: var(--soft_lavender);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+     flex-flow: wrap;
+}
+
+.last-part .text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.last-part button{
+    border:2px solid var(--deep_violet);
+    padding: .8rem;
+    background-color: var(--soft_lavender);
+}
+
+.last-part button:hover{
+    background-color: var(--deep_violet);
+    border: none;
+    color: var(--white_color);
+    transition: .5s ease-in-out;
+}
+
+.last-part span{
+    color: var(--deep_violet);
+    font-family: 'Courier New', Courier;
+}
+
+.last-part h2{
+    font-style: italic;
+}
+
+.last-part img{
+    width: 15rem;
+    border-radius: 20rem;
+    transition: .2s ease-in-out;
+}
+
+.last-part img:hover{
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+
+.last-part #pic1{
+    border-top-right-radius: 500rem;
+    border-bottom-right-radius: 500rem;
+}
+
+.last-part ul li{
+    list-style: armenian;
+}
+
+
+/* footer section */
+
+footer{
+    z-index: 200;
+    background-color: var(--royal_audergine);
+    color: var(--white_color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer #logo img{
+    width: 30rem;
+}
+
+footer .links_and_others{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4rem;
+    flex-flow: wrap;
+}
+
+footer .links_and_others span{
+    color: rgb(85, 85, 85);
+}
+
+footer .links_and_others h1{
+    color: var(--light_green);
+}
+
+footer .socail_media{
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+footer #links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+footer #links a{
+  text-decoration: none;
+  color: rgb(158, 156, 156);
+}
+
+footer #links a:hover{
+  color: var(--pastel_plum);
+}
+
+footer p{
+  color: rgb(158, 156, 156);
+}
+
+footer p:hover{
+  color: var(--pastel_plum);
+}
+
+footer .socail_media div{
+    text-align: center;
+    display: flex;
+    gap: .5rem;
+}
+
+footer .socail_media .icons{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+footer .socail_media div img{
+    width: 2rem;
+}
+
+/* footer .socail_media #text{
+    margin-top: -4rem;
+} */
+
+footer .time_of_open{
+    text-align: center;
+    margin: 1rem;
+}
+
+footer .time_of_open img{
+    width: 5rem;
+}
+
+footer .example_of_pdts{
+    text-align: center;
+    margin: 1rem;
+}
+
+footer .example_of_pdts img{
+    width: 5rem;
+}
+
+footer hr{
+    width: 80vw;
+}
+
+footer .last{
+    text-align: center;
+} 
+
+footer .last img{
+    width: 10rem;
+}
+
+footer .last p{
+    font-size: small;
+    margin-top: -2rem;
+}
+
+
+
+
+
+/* ================= 1024px and below (tablets landscape) ================= */
+@media (max-width: 1024px) {
+
+  nav #logo img {
+    width: 6rem;
+  }
+
+  #links a {
+    margin-right: .6rem;
+    font-size: .9rem;
+  }
+
+  /* section1: img was 30rem fixed — now flexible, and stack on tablet */
+  .section1 {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .section1 img {
+    width: 100%;
+    max-width: 24rem;
+  }
+
+  .section2 {
+    padding: 3rem 1.5rem;
+  }
+
+  .section2 .pictures_load div img {
+    width: 14rem;
+  }
+
+  /* section3: h1 was a fixed 32rem — overflows tablets */
+  .section3 h1 {
+    width: 90%;
+    max-width: 32rem;
+  }
+
+  .section3 .earring .pics img {
+    width: 15rem;
+  }
+
+  /* section4: img was 50rem (800px) — the biggest offender */
+  .section4 {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .section4 img {
+    width: 100%;
+    max-width: 26rem;
+  }
+
+  /* section5: fixed width + huge margin-left breaks tablet layout entirely */
+  .section5 {
+    width: 90%;
+    margin: 2rem auto;
+    flex-direction: column;
+    border-radius: 3rem;
+    text-align: center;
+  }
+
+  /* video: fixed 40rem height is far too tall on tablets */
+  video {
+    height: 22rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  #video {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section6 div~.pics img,
+  .section7 img {
+    width: 11rem;
+  }
+
+  /* section8: cards row needs to wrap on tablets */
+  .section8 {
+    flex-wrap: wrap;
+  }
+
+  .section8 #one img {
+    width: 18rem;
+  }
+
+  .section8 #card1,
+  .section8 #card2,
+  .section8 #card3,
+  .section8 #card4 {
+    width: 45%;
+    height: 13rem;
+  }
+
+  footer #logo img {
+    width: 14rem;
+  }
+
+  footer .links_and_others {
+    gap: 2rem;
+  }
+}
+
+
+/* ================= 768px and below (tablets portrait) ================= */
+@media (max-width: 768px) {
+
+  /* Top utility bar stacks */
+  .others_svgs {
+    flex-direction: column;
+    gap: .6rem;
+    text-align: center;
+  }
+
+  .others_svgs h4 {
+    width: 16ch;
+  }
+
+  #stores {
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  /* Nav stacks under logo */
+  nav {
+    flex-direction: column;
+    gap: .8rem;
+    width: 100vw;
+  }
+
+  #links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  #links a {
+    margin-right: 0;
+  }
+
+  .slide-content p {
+    max-width: 90%;
+  }
+
+  .section1,
+  .section4 {
+    text-align: center;
+  }
+
+  .section2 {
+    padding: 2.5rem 1rem;
+  }
+
+  .section2 .pictures_load {
+    justify-content: center;
+  }
+
+  .section2 .pictures_load div img {
+    width: 45vw;
+    max-width: 12rem;
+  }
+
+  .section2 .circles .two img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .section2 .search {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .section2 .search .edite {
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  .section3 {
+    padding: 1.5rem;
+  }
+
+  .section3 h1 {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: .8rem;
+  }
+
+  .section3 .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section3 .icons img {
+    width: 70px;
+  }
+
+  .section3 .earring .pics img {
+    width: 12rem;
+    margin: .5rem;
+  }
+
+  .section5 {
+    width: 92%;
+    border-radius: 2rem;
+  }
+
+  .section5 #pic img {
+    width: 7rem;
+  }
+
+  .section6,
+  .section7 {
+    padding: 1.2rem;
+  }
+
+  .section6 div~.pics img,
+  .section7 img {
+    width: 9rem;
+  }
+
+  video {
+    height: 16rem;
+  }
+
+  .section8 {
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .section8 #one img {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  .section8 #card1,
+  .section8 #card2,
+  .section8 #card3,
+  .section8 #card4 {
+    width: 100%;
+    height: 11rem;
+    margin: .5rem 0;
+  }
+
+  .middle {
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .last-part {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .last-part .text {
+    align-items: center;
+  }
+
+  .last-part img {
+    width: 60%;
+    max-width: 12rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+  }
+
+  footer #logo img {
+    width: 10rem;
+  }
+
+  footer .links_and_others {
+    justify-content: center;
+    text-align: center;
+    gap: 2rem 1.5rem;
+  }
+}
+
+
+/* ================= 480px and below (phones) ================= */
+@media (max-width: 480px) {
+
+  .others_svgs h4 {
+    width: 14ch;
+    font-size: .9rem;
+  }
+
+  .others_svgs p {
+    font-size: .8rem;
+  }
+
+  nav #logo img {
+    width: 5rem;
+  }
+
+  #links a {
+    font-size: .8rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .slide-content p {
+    font-size: .85rem;
+  }
+
+  .section1 p {
+    font-size: .85rem;
+  }
+
+  .section1 img {
+    max-width: 100%;
+  }
+
+  .section2 {
+    padding: 2rem .8rem;
+  }
+
+  .section2 .pictures_load div img {
+    width: 80vw;
+    max-width: 16rem;
+  }
+
+  .section2 .circles .two img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .section2 .search h1 {
+    font-size: .9rem;
+  }
+
+  .section3 h1 {
+    font-size: 1rem;
+  }
+
+  .section3 .earring .pics img {
+    width: 80vw;
+    max-width: 14rem;
+  }
+
+  .section4 h3 {
+    font-size: 1.1rem;
+  }
+
+  .section4 p {
+    font-size: .85rem;
+  }
+
+  .section5 {
+    padding: 1.2rem;
+  }
+
+  .section5 h2 {
+    font-size: 1.1rem;
+  }
+
+  video {
+    height: 12rem;
+    padding: .5rem;
+    margin: .5rem 0;
+  }
+
+  .section6 div~.pics img,
+  .section7 img {
+    width: 80vw;
+    max-width: 12rem;
+  }
+
+  .section8 #one img {
+    width: 100%;
+  }
+
+  .section8 #card1,
+  .section8 #card2,
+  .section8 #card3,
+  .section8 #card4 {
+    height: 9rem;
+    padding: 1rem;
+  }
+
+  .last-part img {
+    width: 80%;
+    max-width: 10rem;
+  }
+
+  .last-part ul li {
+    font-size: .8rem;
+  }
+
+  footer .links_and_others {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  footer .time_of_open p,
+  footer .example_of_pdts p {
+    font-size: .75rem;
+  }
+}
+
+
+/* ================= 375px and below (small phones) ================= */
+@media (max-width: 375px) {
+
+  .others_svgs h4 {
+    width: 12ch;
+    font-size: .8rem;
+  }
+
+  nav #logo img {
+    width: 4.2rem;
+  }
+
+  #links {
+    gap: .4rem;
+  }
+
+  #links a:hover {
+    padding: .5rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .slide-content .num {
+    font-size: .65rem;
+  }
+
+  .section1 img {
+    width: 100%;
+  }
+
+  .section2 .pictures_load div img {
+    width: 90vw;
+  }
+
+  .section2 .circles .two img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .section3 .earring .pics img {
+    width: 90vw;
+  }
+
+  .section5 {
+    width: 95%;
+    border-radius: 1.5rem;
+  }
+
+  video {
+    height: 10rem;
+  }
+
+  .section8 #card1,
+  .section8 #card2,
+  .section8 #card3,
+  .section8 #card4 {
+    height: 8rem;
+  }
+
+  footer #logo img {
+    width: 8rem;
+  }
+
+  footer .links_and_others h1 {
+    font-size: 1rem;
+  }
+}
+
+
